@@ -1,12 +1,11 @@
 {
   "name": "white-cursor",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Provides a white I-bar cursor in editor views for use with dark backgrounds.",
   "repository": "https://github.com/lee-dohm/white-cursor",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
