@@ -28,6 +28,7 @@ By default the white cursor is always enabled. However, if you set the `white-cu
     * `always` &mdash; White cursor is always enabled **(default)**
     * `detect` &mdash; Detects whether a dark syntax is being used and enables the white cursor accordingly
     * `never` &mdash; White cursor is always *disabled*
+* `white-cursor.darkThemes` &mdash; An array of theme package names (lowercased and hyphenated) that should be treated as dark syntax themes even if they do not contain both `dark` and `syntax` in the name
 
 ## Copyright
 

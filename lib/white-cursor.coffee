@@ -1,6 +1,11 @@
 # Handles activation and deactivation of the package.
 class WhiteCursor
   config:
+    darkThemes:
+      type: 'array'
+      default: []
+      items:
+        type: 'string'
     enabled:
       type: 'string'
       default: 'always'
@@ -47,9 +52,16 @@ class WhiteCursor
   # Private: Indicates if the workspace has a dark syntax theme.
   hasDarkSyntaxTheme: ->
     classNames = @workspace().className
+    regexps = (new RegExp(themeName) for themeName in atom.config.get('white-cursor.darkThemes'))
     for name in classNames.split(' ')
-      if /theme/.test(name) and /syntax/.test(name) and /dark/.test(name)
+      continue unless /theme/.test(name)
+
+      if /syntax/.test(name) and /dark/.test(name)
         return true
+
+      for regex in regexps
+        if regex.test(name)
+          return true
 
     return false
 

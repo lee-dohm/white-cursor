@@ -56,6 +56,26 @@ describe 'White Cursor', ->
 
       expect(atom.workspaceView.hasClass('white-cursor')).toBeFalsy()
 
+    it 'enables the white cursor if a theme matches the configuration', ->
+      atom.config.set 'white-cursor',
+        enabled: 'detect'
+        darkThemes: ['test-theme']
+
+      atom.workspaceView.addClass('theme-test-theme')
+      atom.themes.emitter.emit('did-reload-all')
+
+      expect(atom.workspaceView.hasClass('white-cursor')).toBeTruthy()
+
+    it 'disables the white cursor if never is set even if a theme matches configuration', ->
+      atom.config.set 'white-cursor',
+        enabled: 'never'
+        darkThemes: ['test-theme']
+
+      atom.workspaceView.addClass('theme-test-theme')
+      atom.themes.emitter.emit('did-reload-all')
+
+      expect(atom.workspaceView.hasClass('white-cursor')).toBeFalsy()
+
     it 'updates if the configuration is changed', ->
       atom.config.set('white-cursor.enabled', 'never')
       atom.workspaceView.addClass('theme-test-dark-syntax')
