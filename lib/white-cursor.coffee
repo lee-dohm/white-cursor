@@ -1,7 +1,16 @@
 # Handles activation and deactivation of the package.
 class WhiteCursor
+  config:
+    enabled:
+      type: 'string'
+      default: 'always'
+      enum: ['always', 'detect', 'never']
+
   # Private: Name of the class to indicate whether the white cursor should be used.
   className: 'white-cursor'
+
+  # Private: Subscription to the `atom.config.onDidChange` event.
+  configChanged: null
 
   # Private: Subscription to the `atom.themes.onDidReloadAll` event.
   themesReloaded: null
@@ -14,6 +23,9 @@ class WhiteCursor
     atom.workspaceView.command 'white-cursor:toggle', =>
       @toggle()
 
+    @configChanged ?= atom.config.onDidChange 'white-cursor.enabled', ({}) =>
+      @update()
+
     paneAdded = atom.workspace.onDidAddPane =>
       @update()
       paneAdded.dispose()
@@ -22,6 +34,10 @@ class WhiteCursor
   deactivate: ->
     @themesReloaded.dispose()
     @themesReloaded = null
+
+    @configChanged.dispose()
+    @configChanged = null
+
     @remove()
 
   # Private: Unconditionally adds the `white-cursor` class to the workspace.

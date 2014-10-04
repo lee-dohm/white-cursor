@@ -16,11 +16,18 @@ apm install white-cursor
 
 ## Use
 
-When Atom is loaded or any time you change the themes, the White Cursor package attempts to determine whether you have a dark syntax theme set. If so, it enables the white cursor. You can override its autodetection for the current session by using the `White Cursor: Toggle` command from the Command Palette.
+By default the white cursor is always enabled. However, if you set the `white-cursor.enabled` setting to `detect`, then when Atom is loaded or any time you change the themes, the White Cursor package attempts to determine whether you have a dark syntax theme set. If so, it enables the white cursor. You can override its autodetection for the current session by using the `White Cursor: Toggle` command from the Command Palette.
 
 ### Commands
 
 * `white-cursor:toggle` &mdash; Toggles the white cursor on or off.
+
+### Configuration
+
+* `white-cursor.enabled` &mdash; Accepts one of three values:
+    * `always` &mdash; White cursor is always enabled **(default)**
+    * `detect` &mdash; Detects whether a dark syntax is being used and enables the white cursor accordingly
+    * `never` &mdash; White cursor is always *disabled*
 
 ## Copyright
 
