@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## **master** &mdash; *Unreleased*
+
+* Now attempts to autodetect whether a dark syntax theme is loaded (from the theme name) and enables or disables the white cursor appropriately.
+* Now offers a command `white-cursor:toggle` to turn the white cursor on or off.
+
 ## **v0.3.0** &mdash; *Released: 19 June 2014*
 
 * Switched to a completely CSS-based solution [found on Reddit](http://www.reddit.com/r/Atom/comments/28m5nu/change_your_text_cursor_to_white/)
