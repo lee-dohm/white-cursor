@@ -37,15 +37,15 @@ class WhiteCursor
 
     return false
 
-  # Private: Unconditionally removes the `white-cursor` class from the workspace.
+  # Private: Unconditionally removes the class from the workspace.
   remove: ->
     @workspace().classList.remove(@className)
 
-  # Private: Toggles whether the `white-cursor` class is attached to the workspace.
+  # Private: Toggles whether the class is attached to the workspace.
   toggle: ->
     @workspace().classList.toggle(@className)
 
-  # Private: Updates the workspace to have the `white-cursor` class, if appropriate.
+  # Private: Updates the workspace to have the class, if appropriate.
   update: ->
     if @hasDarkSyntaxTheme() then @add() else @remove()
 
