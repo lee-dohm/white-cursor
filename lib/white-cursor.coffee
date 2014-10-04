@@ -47,7 +47,11 @@ class WhiteCursor
 
   # Private: Updates the workspace to have the class, if appropriate.
   update: ->
-    if @hasDarkSyntaxTheme() then @add() else @remove()
+    switch
+      when atom.config.get('white-cursor.enabled') is 'always' then @add()
+      when atom.config.get('white-cursor.enabled') is 'never' then @remove()
+      when @hasDarkSyntaxTheme() then @add()
+      else @remove()
 
   # Private: Returns a reference to the workspace DOM element.
   workspace: ->
