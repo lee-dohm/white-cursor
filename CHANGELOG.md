@@ -4,6 +4,7 @@
 
 * Attempts to autodetect whether a dark syntax theme is loaded (from the theme name) and enables or disables the white cursor appropriately.
 * Offers a command `white-cursor:toggle` to turn the white cursor on or off.
+* Added configuration option `white-cursor.enabled` that can be set to `always`, `detect` or `never`
 
 ## **v0.3.0** &mdash; *Released: 19 June 2014*
 
