@@ -2,7 +2,7 @@
 
 Provides a white I-bar cursor in editor views for use with dark backgrounds.
 
-![White Cursor animation](https://s3.amazonaws.com/lee-dohm/WhiteCursor.gif)
+![White Cursor animation](https://raw.githubusercontent.com/lee-dohm/white-cursor/master/WhiteCursor.gif)
 
 ## Installation
 
