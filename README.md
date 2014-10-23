@@ -30,6 +30,18 @@ By default the white cursor is always enabled. However, if you set the `white-cu
     * `never` &mdash; White cursor is always *disabled*
 * `white-cursor.darkThemes` &mdash; An array of theme package names (lowercased and hyphenated) that should be treated as dark syntax themes even if they do not contain both `dark` and `syntax` in the name
 
+### Styles
+
+The `.white-cursor-image` mixin is available in case there are situations where you need a white I-bar cursor in some areas of the UI even when you're using a light theme. For example, with the [Term2 package](https://atom.io/packages/term2) you can add the following to your `styles.less`:
+
+```LESS
+@import "packages/white-cursor/stylesheets/white-cursor";
+
+.terminal {
+  .white-cursor-image;
+}
+```
+
 ## Copyright
 
 Copyright &copy; 2014 [Lee Dohm](http://www.lee-dohm.com). See [LICENSE](https://github.com/lee-dohm/white-cursor/blob/master/LICENSE.md) for details.

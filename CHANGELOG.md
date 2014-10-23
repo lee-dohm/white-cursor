@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **v0.4.1** &mdash; *Released: 22 October 2014*
+
+* Created a `.white-cursor-image` mixin so that the white cursor can be used where appropriate with just a style change
+
 ## **v0.4.0** &mdash; *Released: 4 October 2014*
 
 * Attempts to autodetect whether a dark syntax theme is loaded (from the theme name) and enables or disables the white cursor appropriately.
