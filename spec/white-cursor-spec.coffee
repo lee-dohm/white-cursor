@@ -1,5 +1,7 @@
 {WorkspaceView} = require 'atom'
 
+WhiteCursor = require '../lib/white-cursor'
+
 describe 'White Cursor', ->
   beforeEach ->
     atom.workspaceView = new WorkspaceView
@@ -76,7 +78,7 @@ describe 'White Cursor', ->
 
       expect(atom.workspaceView).not.toMatchSelector('.white-cursor')
 
-    it 'updates if the configuration is changed', ->
+    it 'updates if the enabled configuration option is changed', ->
       atom.config.set('white-cursor.enabled', 'never')
       atom.workspaceView.addClass('theme-test-dark-syntax')
       atom.themes.emitter.emit('did-reload-all')
@@ -86,3 +88,10 @@ describe 'White Cursor', ->
       atom.config.set('white-cursor.enabled', 'always')
 
       expect(atom.workspaceView).toMatchSelector('.white-cursor')
+
+    it 'updates if the dark themes list is changed', ->
+      spyOn(WhiteCursor, 'update')
+
+      atom.config.set('white-cursor.darkThemes', ['foo'])
+
+      expect(WhiteCursor.update).toHaveBeenCalled()

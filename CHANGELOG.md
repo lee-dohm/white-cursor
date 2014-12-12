@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **v0.5.0** &mdash; *Released: 12 December 2014*
+
+* Updated to work properly with the Shadow DOM
+
 ## **v0.4.1** &mdash; *Released: 22 October 2014*
 
 * Created a `.white-cursor-image` mixin so that the white cursor can be used where appropriate with just a style change

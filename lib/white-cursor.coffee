@@ -1,4 +1,4 @@
-# Handles activation and deactivation of the package.
+# Public: Handles activation and deactivation of the package.
 class WhiteCursor
   config:
     darkThemes:
@@ -28,7 +28,10 @@ class WhiteCursor
     atom.workspaceView.command 'white-cursor:toggle', =>
       @toggle()
 
-    @configChanged ?= atom.config.onDidChange 'white-cursor.enabled', ({}) =>
+    @configChanged ?= atom.config.onDidChange 'white-cursor.enabled', =>
+      @update()
+
+    @darkThemesChanged ?= atom.config.onDidChange 'white-cursor.darkThemes', =>
       @update()
 
     paneAdded = atom.workspace.onDidAddPane =>
@@ -43,15 +46,20 @@ class WhiteCursor
     @configChanged.dispose()
     @configChanged = null
 
+    @darkThemesChanged.dispose()
+    @darkThemesChanged = null
+
     @remove()
 
   # Private: Unconditionally adds the `white-cursor` class to the workspace.
   add: ->
-    @workspace().classList.add(@className)
+    @workspaceElement().classList.add(@className)
 
   # Private: Indicates if the workspace has a dark syntax theme.
+  #
+  # Returns a {Boolean} indicating whether the current syntax theme is "dark".
   hasDarkSyntaxTheme: ->
-    classNames = @workspace().className
+    classNames = @workspaceElement().className
     regexps = (new RegExp(themeName) for themeName in atom.config.get('white-cursor.darkThemes'))
     for name in classNames.split(' ')
       continue unless /theme/.test(name)
@@ -67,11 +75,11 @@ class WhiteCursor
 
   # Private: Unconditionally removes the class from the workspace.
   remove: ->
-    @workspace().classList.remove(@className)
+    @workspaceElement().classList.remove(@className)
 
   # Private: Toggles whether the class is attached to the workspace.
   toggle: ->
-    @workspace().classList.toggle(@className)
+    @workspaceElement().classList.toggle(@className)
 
   # Private: Updates the workspace to have the class, if appropriate.
   update: ->
@@ -82,7 +90,7 @@ class WhiteCursor
       else @remove()
 
   # Private: Returns a reference to the workspace DOM element.
-  workspace: ->
-    document.querySelector('.workspace')
+  workspaceElement: ->
+    atom.views.getView(atom.workspace)
 
 module.exports = new WhiteCursor()
