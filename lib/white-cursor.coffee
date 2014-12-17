@@ -4,6 +4,8 @@ class WhiteCursor
     darkThemes:
       type: 'array'
       default: []
+      description: 'List of syntax theme names or partial names to categorize as dark on
+                    auto-detection, in case they do not contain the word "dark" in them.'
       items:
         type: 'string'
     enabled:

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **v0.5.1** &mdash; *Released: 16 December 2014*
+
+* Added a description to the `white-cursor.darkThemes` configuration option to make using it more clear
+
 ## **v0.5.0** &mdash; *Released: 12 December 2014*
 
 * Updated to work properly with the Shadow DOM
