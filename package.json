@@ -6,6 +6,6 @@
   "repository": "https://github.com/lee-dohm/white-cursor",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">0.170.0"
   }
 }

@@ -24,10 +24,10 @@ class WhiteCursor
 
   # Public: Activates the package.
   activate: ->
-    @themesReloaded ?= atom.themes.onDidReloadAll =>
+    @themesReloaded ?= atom.themes.onDidChangeActiveThemes =>
       @update()
 
-    atom.workspaceView.command 'white-cursor:toggle', =>
+    @command = atom.commands.add 'atom-workspace', 'white-cursor:toggle', =>
       @toggle()
 
     @configChanged ?= atom.config.onDidChange 'white-cursor.enabled', =>
@@ -42,6 +42,9 @@ class WhiteCursor
 
   # Public: Deactivates the package.
   deactivate: ->
+    @command.dispose()
+    @command = null
+
     @themesReloaded.dispose()
     @themesReloaded = null
 

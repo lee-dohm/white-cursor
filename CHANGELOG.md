@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **v0.5.2** &mdash; *Released: 17 January 2015*
+
+* Fixed all deprecations
+
 ## **v0.5.1** &mdash; *Released: 16 December 2014*
 
 * Added a description to the `white-cursor.darkThemes` configuration option to make using it more clear

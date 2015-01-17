@@ -44,4 +44,4 @@ The `.white-cursor-image` mixin is available in case there are situations where 
 
 ## Copyright
 
-Copyright &copy; 2014 [Lee Dohm](http://www.lee-dohm.com). See [LICENSE](https://github.com/lee-dohm/white-cursor/blob/master/LICENSE.md) for details.
+Copyright &copy; 2014-2015 [Lee Dohm](http://www.lee-dohm.com). See [LICENSE](https://github.com/lee-dohm/white-cursor/blob/master/LICENSE.md) for details.
