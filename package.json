@@ -1,11 +1,18 @@
 {
   "name": "white-cursor",
+  "author": "Lee Dohm <lee@lee-dohm.com>",
   "main": "./lib/white-cursor.coffee",
   "version": "0.5.2",
   "description": "Provides a white I-bar cursor in editor views for use with dark backgrounds.",
+  "keywords": [
+    "white",
+    "cursor",
+    "os x",
+    "mac"
+  ],
   "repository": "https://github.com/lee-dohm/white-cursor",
   "license": "MIT",
   "engines": {
-    "atom": ">0.170.0"
+    "atom": ">=0.174.0 <2.0.0"
   }
 }

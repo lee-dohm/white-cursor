@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## **v0.6.0** &mdash; *Released: 1 May 2015*
+
+* Updated for Deprecation Day
+* Added keywords
+* Added Travis CI build support
+
 ## **v0.5.2** &mdash; *Released: 17 January 2015*
 
 * Fixed all deprecations

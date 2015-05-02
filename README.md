@@ -1,20 +1,10 @@
-# White Cursor Atom Package
+# White Cursor Atom Package [![Build Status](https://travis-ci.org/lee-dohm/white-cursor.svg?branch=master)](https://travis-ci.org/lee-dohm/white-cursor) [![Dependency Status](https://david-dm.org/lee-dohm/white-cursor.svg)](https://david-dm.org/lee-dohm/white-cursor)
 
 Provides a white I-bar cursor in editor views for use with dark backgrounds.
 
 ![White Cursor animation](https://raw.githubusercontent.com/lee-dohm/white-cursor/master/WhiteCursor.gif)
 
-## Installation
-
-The package can be installed by using the Settings screen and searching for `white-cursor`.
-
-It can also be installed from the command line with the command:
-
-```bash
-apm install white-cursor
-```
-
-## Use
+## Usage
 
 By default the white cursor is always enabled. However, if you set the `white-cursor.enabled` setting to `detect`, then when Atom is loaded or any time you change the themes, the White Cursor package attempts to determine whether you have a dark syntax theme set. If so, it enables the white cursor. You can override its autodetection for the current session by using the `White Cursor: Toggle` command from the Command Palette.
 
