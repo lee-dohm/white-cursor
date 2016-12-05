@@ -1,4 +1,6 @@
-# White Cursor Atom Package [![Build Status](https://travis-ci.org/lee-dohm/white-cursor.svg?branch=master)](https://travis-ci.org/lee-dohm/white-cursor) [![Dependency Status](https://david-dm.org/lee-dohm/white-cursor.svg)](https://david-dm.org/lee-dohm/white-cursor)
+# White Cursor Atom Package
+[![Build Status](https://travis-ci.org/lee-dohm/white-cursor.svg?branch=master)](https://travis-ci.org/lee-dohm/white-cursor)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Provides a white I-bar cursor in editor views for use with dark backgrounds.
 
