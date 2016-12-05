@@ -6,7 +6,11 @@ Provides a white I-bar cursor in editor views for use with dark backgrounds.
 
 ![White Cursor animation](https://raw.githubusercontent.com/lee-dohm/white-cursor/master/WhiteCursor.gif)
 
-## Usage
+## :rotating_light: Unmaintained
+
+Since [atom/atom#8663](https://github.com/atom/atom/pull/8663) which was merged in Atom v1.0.12, this package is no longer necessary. I'm leaving it available as an example of how to build an Atom package.
+
+## Use
 
 By default the white cursor is always enabled. However, if you set the `white-cursor.enabled` setting to `detect`, then when Atom is loaded or any time you change the themes, the White Cursor package attempts to determine whether you have a dark syntax theme set. If so, it enables the white cursor. You can override its autodetection for the current session by using the `White Cursor: Toggle` command from the Command Palette.
 
