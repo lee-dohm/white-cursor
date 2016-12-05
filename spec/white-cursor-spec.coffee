@@ -30,13 +30,13 @@ describe 'White Cursor', ->
 
     it 'adds the white-cursor class if a dark syntax theme is loaded', ->
       workspaceElement.classList.add('theme-test-dark-syntax')
-      atom.themes.emitter.emit('did-reload-all')
+      atom.themes.emitter.emit('did-change-active-themes')
 
       expect(workspaceElement).toMatchSelector('.white-cursor')
 
     it 'removes the white-cursor class if a dark syntax theme is unloaded', ->
       workspaceElement.classList.add('white-cursor')
-      atom.themes.emitter.emit('did-reload-all')
+      atom.themes.emitter.emit('did-change-active-themes')
 
       expect(workspaceElement).not.toMatchSelector('.white-cursor')
 
@@ -44,14 +44,14 @@ describe 'White Cursor', ->
     it 'enables the white cursor if configuration is set to always', ->
       atom.config.set('white-cursor.enabled', 'always')
       workspaceElement.classList.remove('white-cursor')
-      atom.themes.emitter.emit('did-reload-all')
+      atom.themes.emitter.emit('did-change-active-themes')
 
       expect(workspaceElement).toMatchSelector('.white-cursor')
 
     it 'disables the white cursor if configuration is set to never', ->
       atom.config.set('white-cursor.enabled', 'never')
       workspaceElement.classList.add('theme-test-dark-syntax')
-      atom.themes.emitter.emit('did-reload-all')
+      atom.themes.emitter.emit('did-change-active-themes')
 
       expect(workspaceElement).not.toMatchSelector('.white-cursor')
 
@@ -61,7 +61,7 @@ describe 'White Cursor', ->
         darkThemes: ['test-theme']
 
       workspaceElement.classList.add('theme-test-theme')
-      atom.themes.emitter.emit('did-reload-all')
+      atom.themes.emitter.emit('did-change-active-themes')
 
       expect(workspaceElement).toMatchSelector('.white-cursor')
 
@@ -71,14 +71,14 @@ describe 'White Cursor', ->
         darkThemes: ['test-theme']
 
       workspaceElement.classList.add('theme-test-theme')
-      atom.themes.emitter.emit('did-reload-all')
+      atom.themes.emitter.emit('did-change-active-themes')
 
       expect(workspaceElement).not.toMatchSelector('.white-cursor')
 
     it 'updates if the enabled configuration option is changed', ->
       atom.config.set('white-cursor.enabled', 'never')
       workspaceElement.classList.add('theme-test-dark-syntax')
-      atom.themes.emitter.emit('did-reload-all')
+      atom.themes.emitter.emit('did-change-active-themes')
 
       expect(workspaceElement).not.toMatchSelector('.white-cursor')
 
